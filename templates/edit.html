@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Post</title>
+  <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="flex justify-center flex-center text-center" style="margin-top: 50px;">
+
+    <div class="flex flex-col choose-upload text-center">
+       
+        <div class="bg-gray-100 border-2 border-dashed flex flex-col h-24 items-center justify-center relative w-full rounded-lg  ">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-12">
+                <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
+                <path d="M9 13h2v5a1 1 0 11-2 0v-5z" />
+            </svg>
+        </div>
+        
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p class="my-3 leading-6"> Edit post</p>
+        <div>
+            <input type="file" name="image_edit">
+            <textarea class="button soft-warning small" name="caption" cols="30" rows="3" placeholder="Caption...">{{caption}}</textarea>
+            <button class="button bg-blue-700" type="submit" style="margin-top: 10px;">Edit</button>
+        </div>
+    </form>
+    </div>
+</div>
+</body>
+</html>
